@@ -1,0 +1,4 @@
+﻿  源.cpp
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\例题\_2\_2\源.cpp(16,8): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\例题\_2\_2\源.cpp(19,8): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  _2.vcxproj -> C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\例题\_2\x64\Debug\_2.exe
