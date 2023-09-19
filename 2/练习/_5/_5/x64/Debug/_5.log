@@ -1,0 +1,3 @@
+﻿  源.cpp
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_5\_5\源.cpp(8,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  _5.vcxproj -> C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_5\x64\Debug\_5.exe

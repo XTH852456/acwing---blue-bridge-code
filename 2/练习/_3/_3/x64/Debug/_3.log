@@ -1,0 +1,5 @@
+﻿  源.cpp
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_3\_3\源.cpp(7,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_3\_3\源.cpp(10,14): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_3\_3\源.cpp(32,21): warning C4554: “>>”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+  _3.vcxproj -> C:\Users\徐天禾\Desktop\gitee\acwing---blue-bridge-code\2\练习\_3\x64\Debug\_3.exe
