@@ -4,67 +4,48 @@
 
 using namespace std;
 
-const int N = 52;
-int f[N][N];
+const int N =55 ,mod= 1000000007;
 int n, m, k;
-int ans = 0;
+int w[N][N];
+int f[N][N][13][14];
 
-void dsf(int i, int j,int count,int a) {
-	if (i == n && j == m) {
-		if (count == k) {
-			ans++;
-			return;
-		}
-		if (f[i][j] > a) {
-			count++;
-			if (count == k)
-				ans++;
-		}
-		return;
-	}
-
-	if (i == n) {
-		dsf(i, j + 1, count, a);
-	}
-	else if (j == m) {
-		dsf(i + 1, j, count, a);
-	}
-	else {
-		dsf(i, j + 1, count, a);
-		dsf(i + 1, j, count, a);
-	}
-
-	if (f[i][j] > a) {
-		a = f[i][j];
-		count++;
-		if (i == n) {
-			dsf(i, j + 1, count, a);
-		}
-		else if (j == m) {
-			dsf(i + 1, j, count, a);
-		}
-		else {
-			dsf(i, j + 1, count, a);
-			dsf(i + 1, j, count, a);
-		}
-	}
-
-	
-
-}
-
-
-
-int main (){
+int main() {
 	cin>>n>>m>>k;
+	for (int i = 1;i <= n;i++) {
+		for (int j = 1;j <= m;j++) {
+			cin >> w[i][j];
+			w[i][j]++;
+		}
+	}
+	f[1][1][1][w[1][1]] = 1;
+	f[1][1][0][0] = 1;
 
 	for (int i = 1;i <= n;i++) {
 		for (int j = 1;j <= m;j++) {
-			cin >> f[i][j];
+
+			if (i == 1 && j == 1)continue;
+			for (int u = 0;u <= k;u++) {
+				for (int v = 0;v <= 13;v++) {
+
+					int &val = f[i][j][u][v];
+					val = (val + f[i - 1][j][u][v]) % mod;
+					val = (val + f[i][j-1][u][v]) % mod;
+					if (u > 0 && v == w[i][j])
+					{
+						for (int c = 0; c < v; c++)
+						{
+							val = (val + f[i - 1][j][u - 1][c]) % mod;
+							val = (val + f[i][j - 1][u - 1][c]) % mod;
+						}
+					}
+				}
+			}
 		}
 	}
-	dsf(1,1,0,-1);
+	int res = 0;
+	for (int i = 0; i <= 13; i++) res = (res + f[n][m][k][i]) % mod;
 
-	cout<<ans% 1000000007;
+	cout << res << endl;
+
 	return 0;
 }
